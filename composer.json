@@ -1,0 +1,15 @@
+{
+    "name": "danbrada/twig-extension-vite",
+    "type": "library",
+    "version": "0.1.0",
+    "require": {
+        "mindplay/php-vite": "^1.0",
+        "php": "^8",
+        "twig/twig": "^3.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "DanBrada\\TwigVite\\": "src"
+        }
+    }
+}
