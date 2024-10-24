@@ -1,7 +1,7 @@
 {
     "name": "danbrada/twig-extension-vite",
     "type": "library",
-    "version": "0.1.0",
+    "version": "dev-main",
     "require": {
         "mindplay/php-vite": "^1.0",
         "php": "^8",
