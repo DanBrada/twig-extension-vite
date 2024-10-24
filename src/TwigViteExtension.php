@@ -17,7 +17,7 @@ class TwigViteExtension extends AbstractTwigExtension implements TwigGlobalsInte
     public function __construct(
         string         $manifestPath,
         private string $basePath = "/",
-        private string $devServer = "http://localhost:5173",
+        private string $devServer = "http://localhost:5173/",
         private bool   $devMode = false
     )
     {
@@ -43,10 +43,10 @@ class TwigViteExtension extends AbstractTwigExtension implements TwigGlobalsInte
     public function getFunctions(): array
     {
         return [
-            new TwigFunction("vite_url", [$this->manifest, "getURL"]),
-            new TwigFunction("vite_styles", [$this, "getStyles"]),
-            new TwigFunction("vite_preloads", [$this, "getPreloads"]),
-            new TwigFunction("vite_scripts", [$this, "getScripts"]),
+            new TwigFunction("vite_url", [$this->manifest, "getURL"], ["is_safe"=>"html"]),
+            new TwigFunction("vite_styles", [$this, "getStyles"], ["is_safe"=>"html"]),
+            new TwigFunction("vite_preloads", [$this, "getPreloads"], ["is_safe"=>"html"]),
+            new TwigFunction("vite_scripts", [$this, "getScripts"], ["is_safe"=>"html"]),
         ];
     }
 
