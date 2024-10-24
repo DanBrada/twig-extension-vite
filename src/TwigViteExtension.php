@@ -24,17 +24,17 @@ class TwigViteExtension extends AbstractTwigExtension implements TwigGlobalsInte
         $this->manifest = new Manifest($this->devMode, $manifestPath, $this->devMode ? $this->devServer . $this->basePath : $this->basePath);
     }
 
-    private function getStyles(string ...$entries): string
+    public function getStyles(string ...$entries): string
     {
         return $this->manifest->createTags($entries)->css;
     }
 
-    private function getScripts(string ...$entries): string
+    public function getScripts(string ...$entries): string
     {
         return $this->manifest->createTags($entries)->js;
     }
 
-    private function getPreloads(string ...$entries): string
+    public function getPreloads(string ...$entries): string
     {
         return $this->manifest->createTags($entries)->preload;
     }
