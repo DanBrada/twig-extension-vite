@@ -43,10 +43,10 @@ class TwigViteExtension extends AbstractTwigExtension implements TwigGlobalsInte
     public function getFunctions(): array
     {
         return [
-            new TwigFunction("vite_url", [$this->manifest, "getURL"], ["is_safe"=>"html"]),
-            new TwigFunction("vite_styles", [$this, "getStyles"], ["is_safe"=>"html"]),
-            new TwigFunction("vite_preloads", [$this, "getPreloads"], ["is_safe"=>"html"]),
-            new TwigFunction("vite_scripts", [$this, "getScripts"], ["is_safe"=>"html"]),
+            new TwigFunction("vite_url", [$this->manifest, "getURL"]),
+            new TwigFunction("vite_styles", [$this, "getStyles"], ["is_safe"=>["html"]]),
+            new TwigFunction("vite_preloads", [$this, "getPreloads"], ["is_safe"=>["html"]]),
+            new TwigFunction("vite_scripts", [$this, "getScripts"], ["is_safe"=>["html"]]),
         ];
     }
 
