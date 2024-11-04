@@ -13,20 +13,20 @@ Adds support for [Vite](https://vite.dev) to [Twig](https://twig.symphony.com).
 
 ```twig
 {{ vite_url("src/app.tsx") }}
-{* More practically, use in link tag: *}
+{# More practically, use in link tag: #}
 <link rel="stylesheet" href="{{vite_url("src/app.css")}}" />
 ```
 
 2) Load all styles/scripts/preloads for entry (entries)
 
 ```twig
-{*Load all preloads*}
+{# Load all preloads #}
 {{ vite_preloads("entryfile.js", "entryfile_2.js") }}
 
-{*Load all styles*}
+{# Load all styles #}
 {{ vite_styles("entryfile.js") }}
 
-{*Load all scripts*}
+{# Load all scripts #}
 {{ vite_scripts("entryfile.js") }}
 ```
 
@@ -53,6 +53,20 @@ install via composer (for now not on packagist.org)
 ``
     composer require danbrada/twig-extenstion-vite
 ``
+
+### Installing directly from git
+
+Update your composer.json:
+```json
+    "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:DanBrada/twig-extension-vite.git"
+    }
+  ]
+```
+
+Then install normally as described above
 
 ## Setup
 
